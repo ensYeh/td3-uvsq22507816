@@ -68,6 +68,23 @@
           <artifactId>maven-project-info-reports-plugin</artifactId>
           <version>3.4.1</version>
         </plugin>
+        <!-- ... other plugins ... -->
+    <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-checkstyle-plugin</artifactId>
+      <version>3.4.0</version>
+      <configuration>
+        <configLocation>config/checkstyle/google_checks.xml</configLocation>
+        <encoding>${project.build.sourceEncoding}</encoding>
+        <failOnViolation>true</failOnViolation>
+      </configuration>
+      <executions>
+        <execution>
+          <phase>validate</phase>
+          <goals><goal>check</goal></goals>
+        </execution>
+      </executions>
+    </plugin>
       </plugins>
     </pluginManagement>
   </build>
